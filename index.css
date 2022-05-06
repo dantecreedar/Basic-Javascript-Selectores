@@ -1,0 +1,14 @@
+:root {
+    --brown: #772432;
+    --ligth-brown: #9f3f3f;
+}
+
+/* Navbar styles */
+.bg-brown {
+    background-color: var(--brown);
+}
+
+.btn-brown{
+    background-color: var(--ligth-brown) !important;
+    color: white !important;
+}

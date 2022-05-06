@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- Add Bootstrap CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <!-- Add Bootstrap Icons CDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+
+    <!-- Add my own styles -->
+    <link rel="stylesheet" href="index.css">
+
+</head>
+
+<body>
+
+    <!-- Start with project -->
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-brown">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Café</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Inicio </a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown categoryDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Categorias
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#">Arábica</a></li>
+                            <li><a class="dropdown-item" href="#">Robusta</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <form class="d-flex">
+                    <input class="form-control rounded-pill" type="search" placeholder="Búscar" aria-label="Search">
+                    <button class="btn btn-brown rounded-circle" type="submit"><i class="bi bi-search"></i></button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Content -->
+    <div class="container-fluid">
+        <!-- Buttons-->
+        <button id="createAccount" class="btn btn-brown rounded-pill mt-4" type="submit">
+            <i class="bi bi-person-plus-fill"></i>
+            Crear cuenta
+        </button>
+
+        <button id="loginButton" class="btn btn-brown rounded-pill mt-4 login-button" type="submit">
+            <i class="bi bi-person-circle"></i>
+            Iniciar sesion
+        </button>
+
+        <button id="blockAccountButton" class="btn btn-brown rounded-pill mt-4 lock-button btnBlock" type="submit">
+            <i class="bi bi-person-circle"></i>
+            Bloquear Cuenta
+        </button>
+        <!-- End Buttons-->
+
+        <div class="row ">
+            <div class="col-3"></div>
+
+            <div class="col-6">
+                <!-- Formulario de Create Account-->
+                <div class="card mt-4 d-none" id="cardCreateAccount">
+                    <div class="card-header bg-info">
+                        <h2>Crear Cuenta</h2>
+                    </div>
+                    <div class="card-body">
+                        <form>
+                            <div class="mb-3">
+                                <label for="exampleInputEmail1" class="form-label">Email</label>
+                                <input type="email" class="form-control" id="exampleInputEmail1"
+                                    aria-describedby="emailHelp" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="exampleInputPassword1" class="form-label">Contraseña</label>
+                                <input type="password" class="form-control" id="exampleInputPassword1" required>
+                            </div>
+                            <div class="mb-3 form-check">
+                                <input id="policyCheck" type="checkbox" class="form-check-input">
+                                <label class="form-check-label" for="policyCheck">Acepto condiciones</label>
+                            </div>
+                            <button id="create" type="submit" class="btn btn-primary" disabled>Crear Cuenta</button>
+                        </form>
+                    </div>
+                </div>
+                <!--END  Formulario de Create Account-->
+                <!-- Formulario de login-->
+                <div class="card mt-4 d-none" id="cardLogin">
+                    <div class="card-header bg-info">
+                        <h2>Iniciar Sesion</h2>
+                    </div>
+                    <div class="card-body">
+                        <form>
+                            <div class="mb-3">
+                                <label for="exampleInputEmail1" class="form-label">Email</label>
+                                <input type="email" class="form-control" id="exampleInputEmail1"
+                                    aria-describedby="emailHelp" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="exampleInputPassword1" class="form-label">Contraseña</label>
+                                <input type="password" class="form-control" id="exampleInputPassword1" required>
+                            </div>
+                            <div class="mb-3 form-check">
+                                <input id="rememberCheck" type="checkbox" class="form-check-input">
+                                <label class="form-check-label" for="rememberCheck">Recordar cuenta</label>
+                            </div>
+                            <button id="login" type="submit" class="btn btn-primary" disabled>Iniciar sesion</button>
+                            <a href="#" >¿Olvidaste contraseña?</a>
+                        </form>
+                    </div>
+                </div>
+                <!-- End Formulario de login-->
+                <!--bloqueo-->
+                <div class="card mt-4 d-none" id="cardLockId">
+                    <div class="card-header bg-danger">
+                        <h2>Bloquear Usuario</h2>
+                    </div>
+                    <div class="card-body">
+                        <form>
+                            <div class="mb-3">
+                                <label for="exampleInputEmail1" class="form-label">Nombre de Usuario</label>
+                                <i class="bi bi-person-circle"></i>
+                                <input type="email" class="form-control" id="exampleInputEmail1"
+                                    aria-describedby="emailHelp" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="exampleInputPassword1" class="form-label">Id Correspondiente</label>
+                                <input type="password" class="form-control" id="exampleInputPassword1" required>
+                            </div>
+                            <div class="mb-3 form-check">
+                                <label class="form-check-label link-danger" for="rememberCheck">La cuenta seleccionada sera Borrada de la base de Datos <i class="bi bi-fingerprint"></i><hr></label>
+                            </div>
+                            <button id="create" type="submit" class="btn btn-primary rounded-pill">Remover Datos</button>
+                            
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-3"></div>
+        </div>
+    </div>
+
+    <!-- Add Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+
+    <!-- Add my own javascript -->
+    <script src="./js/createAccount.js" rel="javascript"></script>
+    <script src="./js/login.js" rel="javascript"></script>  
+</body>
+
+</html>
